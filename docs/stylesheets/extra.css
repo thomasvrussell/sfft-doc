@@ -22,9 +22,9 @@
 
 /* Move the content to the bottom-left */
 .mdx-hero__content {
-    position: absolute;
-    bottom: 0px;
-    left: 211px;
+    position: relative;
+    bottom: -310px;
+    left: 0px;
     color: white;
     text-align: left;
     padding: 0px;  /* Adjust padding to fit the design */
