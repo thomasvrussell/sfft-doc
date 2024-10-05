@@ -31,7 +31,8 @@ site_name: SFFT Documentation
 site_url: https://thomasvrussell.github.io/sfft-doc/
 site_author: Lei Hu
 site_description: >-
-  Saccadic Fast Fourier Transform (SFFT), a fast and accurate image subtraction algorithm for astronomical images
+  Saccadic Fast Fourier Transform (SFFT) 
+  - a fast & accurate astronomical image subtraction algorithm
 
 # site_name: MkDocs Template
 # site_description: 'A template for future MkDocs wikis'
@@ -116,7 +117,7 @@ repo_url: https://github.com/thomasvrussell/sfft
 # Configuration
 theme:
     name: material
-    # custom_dir: material/overrides
+    custom_dir: material/overrides
     features:
       - announce.dismiss
       # - content.action.edit
@@ -751,3 +752,6 @@ nav:
 #       - insiders/community-experts-program/index.md
 #   - Blog:
 #     - blog/index.md
+
+extra_css:
+  - stylesheets/extra.css

@@ -1,0 +1,32 @@
+/* Hide the updates banner */
+.md-banner {
+    display: none;
+}
+
+/* Hide the "Get Insiders" button */
+.md-button[href*="insiders"] {
+    display: none;
+}
+
+/* Hide the existing "Technical documentation that just works" text */
+.mdx-hero__content h1 {
+    display: none;
+}
+
+/* Hide the "Technical documentation that just works" text */
+.mdx-hero__content::before {
+    content: "SFFT";
+    font: 32px "Lato";
+    font-weight: bold;
+}
+
+/* Move the content to the bottom-left */
+.mdx-hero__content {
+    position: absolute;
+    bottom: 0px;
+    left: 211px;
+    color: white;
+    text-align: left;
+    padding: 0px;  /* Adjust padding to fit the design */
+    z-index: 2;  /* Ensure content appears above the background */
+}
