@@ -19,14 +19,3 @@
     font: 32px "Lato";
     font-weight: bold;
 }
-
-/* Move the content to the bottom-left */
-.mdx-hero__content {
-    position: relative;
-    bottom: -310px;
-    left: 0px;
-    color: white;
-    text-align: left;
-    padding: 0px;  /* Adjust padding to fit the design */
-    z-index: 2;  /* Ensure content appears above the background */
-}
