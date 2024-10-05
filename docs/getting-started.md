@@ -22,7 +22,7 @@ package manager. If not, we recommend using [`docker`][docker].
 
 Material for MkDocs is published as a [Python package] and can be installed with
 `pip`, ideally by using a [virtual environment]. Open up a terminal and install
-Material for MkDocs with:
+Material for MkDocs with XXX:
 
 === "Latest"
 
