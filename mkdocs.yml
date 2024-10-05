@@ -28,7 +28,7 @@
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
 site_name: SFFT Documentation
-site_url: https://squidfunk.github.io/mkdocs-material/  # TBD
+site_url: https://thomasvrussell.github.io/sfft-doc/
 site_author: Lei Hu
 site_description: >-
   Saccadic Fast Fourier Transform (SFFT), a fast and accurate image subtraction algorithm for astronomical images
