@@ -637,9 +637,10 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Getting started:
-    - Installation: getting-started.md
-    - Tutorials: tutorials.md
+  - Overview: getting-started.md
+  - Installation: installation.md
+  - Tutorials: tutorials.md
+  - Citing: citing.md
 #     - Creating your site: creating-your-site.md
 #     - Publishing your site: publishing-your-site.md
 #     - Customization: customization.md
