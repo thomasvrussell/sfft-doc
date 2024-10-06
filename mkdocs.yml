@@ -639,7 +639,7 @@ nav:
   - Home: index.md
   - Getting started:
     - Installation: getting-started.md
-    - Tutorials: tutorials/index.md
+    - Tutorials: tutorials.md
 #     - Creating your site: creating-your-site.md
 #     - Publishing your site: publishing-your-site.md
 #     - Customization: customization.md

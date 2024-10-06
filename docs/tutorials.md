@@ -21,9 +21,9 @@ then you can skip these steps. Sometimes there will be ways of achieving the
 same goal that differ between the public version and the Insider edition. In
 that case, we will show them in a tabbed view so you can see one or the other.
 
-[public version]: ../getting-started.md
-[Insiders edition]: ../insiders/getting-started.md
-[creating your site]: ../creating-your-site.md
+[public version]: getting-started.md
+<!-- [Insiders edition]: ../insiders/getting-started.md -->
+<!-- [creating your site]: ../creating-your-site.md -->
 
 !!! note "Feedback wanted!"
     The tutorials are a recent addition to our documentation and we are still
