@@ -1,15 +1,17 @@
 # Citing
 
 [Arxiv Link]: https://arxiv.org/abs/2109.09334
+[ADS Link]: https://ui.adsabs.harvard.edu/abs/2022ApJ...936..157H/abstract
 [10.3847/1538-4357/ac7394]: https://doi.org/10.3847/1538-4357/ac7394
 
 [1] **Image Subtraction in Fourier Space**[^1]. <br> Hu et al. 2022, The Astrophysical Journal, 936, 157 <br>
-See [Arxiv Link] and Related DOI: [10.3847/1538-4357/ac7394]
+See [Arxiv Link], [ADS Link] and Related DOI: [10.3847/1538-4357/ac7394]
 
 [Arxiv Link]: https://arxiv.org/abs/2309.09143
+[ADS Link]: https://ui.adsabs.harvard.edu/abs/2024AJ....167..231H/abstract
 [10.3847/1538-3881/ad36cb]: https://doi.org/10.3847/1538-3881/ad36cb
 [2] **Differencing and Coadding JWST Images with Matched Point-spread Function**[^2]. <br> Hu & Wang 2024, The Astronomical Journal, 167, 231 <br>
-See [Arxiv Link] and Related DOI: [10.3847/1538-3881/ad36cb]
+See [Arxiv Link], [ADS Link] and Related DOI: [10.3847/1538-3881/ad36cb]
 
   [^1]:
     The first publication of SFFT introduced the fundamental methodology behind the SFFT approach.
