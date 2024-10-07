@@ -21,11 +21,3 @@
 
 !!! Answer
     We have tried our best to ensure the backward compatiablity, however, the rule was sometimes overrided in the development of sfft, e.g., some arguments might be deprecated in higher version of sfft. Users might get errors when they use old scripts but update sfft to a higher version. To solve the problem, I have been maintaining the test scripts on Github to make sure they can always work for the lastest version of sfft. You can also find the change log of arguments in the test scripts. 
-
-## Common installation issues
-
-!!! Issue
-    If your Python environment already has some version of ``llvmlite`` (a package required by NumPy backend) before installing sfft. Sometimes the ``setup.py`` in sfft cannot properly update llvmlite to the desired version, then you may get errors related to ``Numba`` or ``llvmlite``. You can manually install llvmlite by:
-    ```
-    pip install llvmlite==0.36.0 --ignore-installed
-    ```

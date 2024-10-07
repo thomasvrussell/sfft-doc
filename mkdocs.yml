@@ -641,7 +641,9 @@ nav:
   - Installation: installation.md
   - Tutorials: tutorials.md
   - What's New: new.md
+  - Todo List: todo.md
   - Q & A: QA.md
+  - Issues: issue.md
   - Citing: citing.md
   - Acknowledgements: acknowledgements.md
 #     - Creating your site: creating-your-site.md
