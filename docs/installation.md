@@ -1,137 +1,74 @@
-# Getting started
+# Installation
 
-Material for MkDocs is a powerful documentation framework on top of [MkDocs],
-a static site generator for project documentation.[^1] If you're familiar with
-Python, you can install Material for MkDocs with [`pip`][pip], the Python
-package manager. If not, we recommend using [`docker`][docker].
-
-  [^1]:
-    In 2016, Material for MkDocs started out as a simple theme for MkDocs, but
-    over the course of several years, it's now much more than that – with the
-    many built-in plugins, settings, and countless customization abilities,
-    Material for MkDocs is now one of the simplest and most powerful frameworks
-    for creating documentation for your project.
-
-  [MkDocs]: https://www.mkdocs.org
-  [pip]: #with-pip
-  [docker]: #with-docker
-
-## Installation
-
-### with pip <small>recommended</small> { #with-pip data-toc-label="with pip" }
-
-Material for MkDocs is published as a [Python package] and can be installed with
-`pip`, ideally by using a [virtual environment]. Open up a terminal and install
-Material for MkDocs with XX22X:
-
+<!-- ### with pip <small>recommended</small> { #with-pip data-toc-label="with pip" } -->
+## SFFT Installation
+[PyPI]: https://pypi.org/project/sfft/
+To install the latest stable version of sfft from [PyPI]: <small>[recommended]</small>
 === "Latest"
 
     ``` sh
     pip install sfft
     ```
 
-This will automatically install compatible versions of all dependencies:
-[MkDocs], [Markdown], [Pygments] and [Python Markdown Extensions]. Material for
-MkDocs always strives to support the latest versions, so there's no need to
-install those packages separately.
+[GitHub]: https://github.com/thomasvrussell/sfft
+One can also install sfft from [GitHub]:
+```
+git clone https://github.com/thomasvrussell/sfft.git
+```
+```
+python setup.py install
+```
+Both will automatically install compatible versions of python dependencies.
 
 !!! tip
 
-    If you don't have prior experience with Python, we recommend reading
-    [Using Python's pip to Manage Your Projects' Dependencies], which is a
-    really good introduction on the mechanics of Python package management and
-    helps you troubleshoot if you run into errors.
+    PyPI/GitHub installation does not include the setup of GPU backend.
 
-  [Python package]: https://pypi.org/project/mkdocs-material/
-  [virtual environment]: https://realpython.com/what-is-pip/#using-pip-in-a-python-virtual-environment
-  [semantic versioning]: https://semver.org/
-  <!-- [upgrade to the next major version]: upgrade.md -->
-  [Markdown]: https://python-markdown.github.io/
-  [Pygments]: https://pygments.org/
-  [Python Markdown Extensions]: https://facelessuser.github.io/pymdown-extensions/
-  [Using Python's pip to Manage Your Projects' Dependencies]: https://realpython.com/what-is-pip/
+## Enable GPU backend
 
-### with docker
+[CuPy]: https://cupy.dev
+SFFT method supports both CPU backend and GPU backend. To enable the GPU backend, users need to further install [CuPy] according to their CUDA version. Note this backend requires GPU device(s) with double-precision support.
 
-The official [Docker image] is a great way to get up and running in a few
-minutes, as it comes with all dependencies pre-installed. Open up a terminal
-and pull the image with:
-
-=== "Latest"
-
-    ```
-    docker pull squidfunk/mkdocs-material
-    ```
-
-=== "9.x"
-
-    ```
-    docker pull squidfunk/mkdocs-material:9
-    ```
-
-The `mkdocs` executable is provided as an entry point and `serve` is the
-default command. If you're not familiar with Docker don't worry, we have you
-covered in the following sections.
-
-The following plugins are bundled with the Docker image:
-
-- [mkdocs-minify-plugin]
-- [mkdocs-redirects]
-
-  [Docker image]: https://hub.docker.com/r/squidfunk/mkdocs-material/
-  [mkdocs-minify-plugin]: https://github.com/byrnereese/mkdocs-minify-plugin
-  [mkdocs-redirects]: https://github.com/datarobot/mkdocs-redirects
-
-??? question "How to add plugins to the Docker image?"
-
-    Material for MkDocs only bundles selected plugins in order to keep the size
-    of the official image small. If the plugin you want to use is not included,
-    you can add them easily:
-
-    === "Material for MkDocs"
-
-        Create a `Dockerfile` and extend the official image:
-
-        ``` Dockerfile title="Dockerfile"
-        FROM squidfunk/mkdocs-material
-        RUN pip install mkdocs-macros-plugin
-        RUN pip install mkdocs-glightbox
-        ```
-
-    === "Insiders"
-
-        Clone or fork the Insiders repository, and create a file called
-        `user-requirements.txt` in the root of the repository. Then, add the
-        plugins that should be installed to the file, e.g.:
-
-        ``` txt title="user-requirements.txt"
-        mkdocs-macros-plugin
-        mkdocs-glightbox
-        ```
-
-    Next, build the image with the following command:
-
-    ```
-    docker build -t squidfunk/mkdocs-material .
-    ```
-
-    The new image will have additional packages installed and can be used
-    exactly like the official image.
-
-### with git
-
-Material for MkDocs can be directly used from [GitHub] by cloning the
-repository into a subfolder of your project root which might be useful if you
-want to use the very latest version:
-
+- CUDA 12: e.g., enable the CuPy backend for CUDA 12.0 via
 ```
-git clone https://github.com/squidfunk/mkdocs-material.git
+pip install cupy-cuda12x
 ```
 
-Next, install the theme and its dependencies with:
-
+- CUDA 11: e.g., enable the CuPy backend for CUDA 11.5 via
 ```
-pip install -e mkdocs-material
+pip install cupy-cuda115
 ```
 
-  [GitHub]: https://github.com/squidfunk/mkdocs-material
+- CUDA 10: e.g., enable the CuPy backend for CUDA 10.1 via
+```
+pip install cupy-cuda101
+```
+
+!!! Remarks
+
+    There was a PyCUDA backend in sfft but now deprecated since v1.4.0. For sfft < v1.4.0, PyCUDA backend was preserved as it consumes less GPU memory. However, the CuPy backend is now better implemented for GPU memory allocation, making the PyCUDA backend no longer useful.
+
+## AstrOmatic Dependencies
+
+You need further to install additional AstrOmatic software for sfft.
+[SExtractor]: https://github.com/astromatic/sextractor
+[SWarp]: https://github.com/astromatic/swarp
+[AstrOmatic]: https://www.astromatic.net/software
+
+- [SExtractor]: SExtractor from [AstrOmatic] is required for SFFT preprocessing, as it allows SFFT to determine an appropriate pixel mask for the input image pair before performing image subtraction. This step is critical for achieving more accurate parameter solutions.
+```
+conda install -c conda-forge astromatic-source-extractor
+```
+
+    !!! tip
+
+        We have wrapped SExtractor into a Python module, ``sfft.utils.pyAstroMatic.PYSEx``, enabling users to trigger SExtractor directly within Python. Use ``help(sfft.utils.pyAstroMatic.PYSEx)`` for more details.
+
+- [SWarp] (optional): SWarp from [AstrOmatic] is not required for sfft subtraction itself. However, it is normally useful to align the input image-pair before image subtraction by SWarp.
+```
+conda install -c conda-forge astromatic-swarp
+```
+
+    !!! tip
+
+        We have additionally wrapped SWarp into a Python module ``sfft.utils.pyAstroMatic.PYSWarp`` so that you can align images in a more Pythonic way. Use ``help(sfft.utils.pyAstroMatic.PYSWarp)`` for more details.

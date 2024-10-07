@@ -52,7 +52,7 @@ site_description: >-
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
 # Copyright
-copyright: Copyright &copy; 2016 - 2024 Lei Hu
+copyright: Copyright &copy; Lei Hu
 
 # +--------------------------------------------------------------------------------------------------------+
 # |                                                                                                        |
@@ -166,7 +166,7 @@ theme:
           icon: material/toggle-switch-off
           name: Switch to system preference
     font:
-      text: Lato # Merriweather # Mate # Playfair Display # Bodoni Moda # Libre Baskerville # Open Sans
+      text: Roboto # Merriweather # Mate # Playfair Display # Bodoni Moda # Libre Baskerville # Open Sans
       code: Roboto Mono
     favicon: assets/favicon.png
     icon:
@@ -637,11 +637,12 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Overview: getting-started.md
+  - Overview: overview.md
   - Installation: installation.md
   - Tutorials: tutorials.md
   - Q & A: QA.md
   - Citing: citing.md
+  - Acknowledgements: acknowledgements.md
 #     - Creating your site: creating-your-site.md
 #     - Publishing your site: publishing-your-site.md
 #     - Customization: customization.md

@@ -1,39 +1,19 @@
-# Tutorials
+# Citing
 
-In addition to the basic getting started guides, we offer tutorials that aim to
-show how you can use Material for MkDocs in different use cases. In contrast to
-the getting started guides or the reference documentation, the tutorials show
-the breadth of features available in Material for MkDocs but also within
-the wider MkDocs ecosystem.
+[Arxiv Link]: https://arxiv.org/abs/2109.09334
+[10.3847/1538-4357/ac7394]: https://doi.org/10.3847/1538-4357/ac7394
 
-The tutorials guide you through worked examples, so by following them you should
-gain not only an understanding of how to use Material for MkDocs, but also
-a template for your own projects. For convenience, these templates are also
-available as template repositories on GitHub.
+[1] **Image Subtraction in Fourier Space**[^1]. <br> Hu et al. 2022, The Astrophysical Journal, 936, 157 <br>
+See [Arxiv Link] and Related DOI: [10.3847/1538-4357/ac7394]
 
-The tutorials assume that you have installed either the [public version] or the
-[Insiders edition] of Material for MkDocs and that you have worked through the
-[creating your site] setup guide.
+[Arxiv Link]: https://arxiv.org/abs/2309.09143
+[10.3847/1538-3881/ad36cb]: https://doi.org/10.3847/1538-3881/ad36cb
+[2] **Differencing and Coadding JWST Images with Matched Point-spread Function**[^2]. <br> Hu & Wang 2024, The Astronomical Journal, 167, 231 <br>
+See [Arxiv Link] and Related DOI: [10.3847/1538-3881/ad36cb]
 
-Note that where the features we use require the Insiders edition, we mark these
-with the heart icon: <!-- md:sponsors --> If you are using the public version
-then you can skip these steps. Sometimes there will be ways of achieving the
-same goal that differ between the public version and the Insider edition. In
-that case, we will show them in a tabbed view so you can see one or the other.
+  [^1]:
+    The first publication of SFFT introduced the fundamental methodology behind the SFFT approach.
 
-[public version]: getting-started.md
-<!-- [Insiders edition]: ../insiders/getting-started.md -->
-<!-- [creating your site]: ../creating-your-site.md -->
-
-!!! note "Feedback wanted!"
-    The tutorials are a recent addition to our documentation and we are still
-    working out what shape they should have in the end. Please [provide any
-    feedback you might have in this discussion thread].
-
-    Note, however, that suggestions should be specific and feasible. We want to
-    focus on creating more content at the moment, instead of developing a
-    specific styling or behaviour for the tutorials. If there are worthwhile
-    improvements that we can make through simple customization then we are happy
-    to consider those.
-
-[provide any feedback you might have in this discussion thread]: https://github.com/squidfunk/mkdocs-material/discussions/7220
+  [^2]:
+    The second publication of SFFT introduced several adaptations and improvements. We incorporated kernel regularization into SFFT and extended the method to be fully compatible with ZOGY's statistically closed-form framework. This hybrid approach preserves the general workflow of ZOGY while adding image-matching refinements using the SFFT code, making it an optimal subtraction engine for space telescopes such as JWST/NIRCam and Roman.
+    
