@@ -27,7 +27,7 @@ Both will automatically install compatible versions of python dependencies.
 ## Enable GPU backend
 
 [CuPy]: https://cupy.dev
-SFFT method supports both CPU backend and GPU backend. To enable the GPU backend, users need to further install [CuPy] according to their CUDA version. Note this backend requires GPU device(s) with double-precision support.
+SFFT supports both CPU (Numpy) backend and GPU (Cupy) backend. To enable the GPU backend, users need to further install [CuPy] according to their CUDA version. Note this backend requires GPU device(s) with double-precision support.
 
 - CUDA 12: e.g., enable the CuPy backend for CUDA 12.0 via
 ```

@@ -1,6 +1,6 @@
 ---
 template: home.html
-title: SFFT
+title: Home
 social:
   cards_layout_options:
     title: Documentation for SFFT

@@ -27,7 +27,7 @@
 # | - https://www.mkdocs.org/user-guide/configuration/#site_url                                            |
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
-site_name: SFFT Documentation
+site_name: SFFT
 site_url: https://thomasvrussell.github.io/sfft-doc/
 site_author: Lei Hu
 site_description: >-
@@ -640,6 +640,7 @@ nav:
   - Overview: overview.md
   - Installation: installation.md
   - Tutorials: tutorials.md
+  - What's New: new.md
   - Q & A: QA.md
   - Citing: citing.md
   - Acknowledgements: acknowledgements.md

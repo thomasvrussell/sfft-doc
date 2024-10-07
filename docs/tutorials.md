@@ -35,6 +35,27 @@ In this example, we use the module ``sfft.EasyCrowdedPacket`` to perform image s
     
     In Crowded-flavor sfft, we only identify the pixels contaminated by saturated sources as distraction pixels using SExtractor, and then replace the distraction pixels by local background flux. 
 
+### SFFT on Multiple Tasks
+
+[Examples for Mult-Task SFFT]: https://github.com/thomasvrussell/sfft/tree/master/test/subtract_test_multiprocessing
+[Multi-Task Example for Sparse-flavor SFFT]: https://github.com/thomasvrussell/sfft/blob/master/test/subtract_test_multiprocessing/multiple_subtract_sparse_flavor.py
+[Multi-Task Example for Crowded-flavor SFFT]: https://github.com/thomasvrussell/sfft/blob/master/test/subtract_test_multiprocessing/multiple_subtract_crowded_flavor.py
+
+We also developed modules to optimize the overall computing performance of Sparse-flavor sfft and Crowded-flavor sfft for the cases when you need to deal with multiple tasks simultaneously. Get started with [Examples for Mult-Task SFFT]. Note that the multiprocessing mode ONLY support the CuPy backend. 
+
+We use the module ``sfft.MultiEasySparsePacket`` in [Multi-Task Example for Sparse-flavor SFFT] and ``sfft.MultiEasyCrowdedPacket`` in [Multi-Task Example for Crowded-flavor SFFT] to conduct image subtraction on a set of image pairs, respectively.
+
+!!! Details
+    In a particular time-domain survey, one may need to process a large set of image-pairs simultaneously. Assume that you have Nt tasks which should be processed by a computing platform with Nc CPU threads and Ng GPU devices. Generally, Nt >> Ng and Nc >> Ng. E.g.,
+
+        Nt = 61 (A DECam exposure with CCDs)
+        Nc = 40 (A CPU with 40 threads)
+        Ng = 1 (A Tesla A100 available)
+
+    Note that we generally need to avoid multiple tasks using one GPU at the same time (GPU out-of-memory issue). That is to say, we CANNOT simply trigger a set of sfft functions (e.g., ``sfft.EasySparsePacket``) to process a large set of image-pairs simultaneously. 
+    
+    The SFFT modules are designed to handle multiple tasks by parallelizing CPU-intensive **preprocessing** through multiprocessing on CPU, while running the GPU-intensive SFFT subtraction sequentially on each available GPU device.
+
 ### Preparations before SFFT
 
 [Example for SFFT Preparation]: https://github.com/thomasvrussell/sfft/tree/master/test/subtract_test_sparse_flavor/prepare_data_example
@@ -47,10 +68,18 @@ Sky subtraction is required for the Sparse Field Flavor of SFFT, while image ali
 
 - Use SWarp to align reference image and science image, see [Example for Image Alignment] using module ``sfft.utils.pyAstroMatic.PYSWarp``. 
 
-## Customized usage
+### Noise Decorrelation after SFFT
+
+[Example for Difference Noise Decorrelation]: https://github.com/thomasvrussell/sfft/tree/master/test/difference_noise_decorrelation
+
+SFFT also provided a decorrelation module to whiten the background noise of the SFFT difference image, see [Example for Difference Noise Decorrelation].
+
+In this example, we use the module ``sfft.utils.DeCorrelationCalculator`` to whiten the background noise on difference image. The test difference image is generated from sfft image subtraction between a coadded reference image and a coadded science image, each stacked from 5 DECam individual observations with PSF homogenization using sfft. The toolkit can be also applied to whiten a coadded image as long as convolution is involved in the stacking process.
+
+## Customized masking
 
 [Example for Customized SFFT]: https://github.com/thomasvrussell/sfft/tree/master/test/subtract_test_customized
-The customized sfft is designed to allow users to feed their own image-masking to replace the generic **preprocessing** in sfft. Get started with [Example for Customized SFFT]. 
+SFFT also allows users to feed their own image-masking to replace the generic **preprocessing** in Sparse-flavor sfft or Crowded-flavor sfft. Get started with [Example for Customized SFFT]. 
 
 In this example, we use the module ``sfft.CustomizedPacket`` to perform image subtraction for ZTF-M31 observations with given image mask. For more details on module usage, refer to ``help(sfft.CustomizedPacket)``.
 
