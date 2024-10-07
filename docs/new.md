@@ -1,4 +1,13 @@
+[NASA GPU Hackathon 2024]: https://www.nas.nasa.gov/hackathon/#home
+[Roman Supernova PIT team]: https://github.com/Roman-Supernova-PIT
+
 ## 2024
+- <small>[Lei, Sep 23, 2024]</small> New release ``sfft v1.6.1``: add PureCupy modules to directly handle GPU arrays as inputs/outputs. Most improvements were developed during the [NASA GPU Hackathon 2024].
+
+- <small>[Lei, Sep 17, 2024]</small> We are developing SFFT in [NASA GPU Hackathon 2024] as part of the pipeline optimization efforts for the [Roman Supernova PIT team].
+
+- <small>[Lei, Mar 9, 2024]</small> New release ``sfft v1.5.0`` that added B-Spline SFFT as a main function.
+
 - <small>[Lei, Jan 9, 2024]</small> New release ``sfft v1.4.2+`` that can support Python 3.10! 
 
 ## 2023
