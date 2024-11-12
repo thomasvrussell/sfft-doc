@@ -12,6 +12,8 @@ If you have any question or recommendation about the SFFT, feel free to contact 
 
     </div>
 
+    <div style="font-size: 18px; border: 0px solid #007bff; padding: 12px; border-radius: 5px;">
+
     <strong>Prof. Lifan Wang</strong><br>
     Professor | Department of Physics & Astronomy <br>
     Texas A&M University | College Station, TX | USA<br>
