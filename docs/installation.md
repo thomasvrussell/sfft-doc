@@ -16,7 +16,7 @@ One can also install sfft from [GitHub]:
 git clone https://github.com/thomasvrussell/sfft.git
 ```
 ```
-python setup.py install
+pip install .
 ```
 Both will automatically install compatible versions of python dependencies.
 
